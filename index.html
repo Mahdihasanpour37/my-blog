@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه انجمن سلطنتی</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        header, main, footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* هدر */
+        header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            border-bottom: 1px solid #ffffff10;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #c9a84c;
+            margin-bottom: 15px;
+            box-shadow: 0 0 30px #c9a84c33;
+        }
+
+        .shop-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #c9a84c;
+            margin-bottom: 5px;
+        }
+
+        .shop-sub {
+            font-size: 12px;
+            color: #555577;
+            letter-spacing: 3px;
+        }
+
+        /* محصولات */
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 18px;
+            color: #c9a84c;
+            margin-bottom: 30px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #ffffff08;
+            border: 1px solid #ffffff15;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px #c9a84c22;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-name {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .product-price {
+            font-size: 13px;
+            color: #c9a84c;
+            margin-bottom: 12px;
+        }
+
+        .order-btn {
+            display: block;
+            width: 100%;
+            background: #c9a84c;
+            color: #000000;
+            border: none;
+            padding: 9px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .order-btn:hover { background: #e0bc5e; }
+
+        /* فوتر */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #333355;
+            font-size: 12px;
+            margin-top: 40px;
+            border-top: 1px solid #ffffff10;
+        }
+
+        footer a { color: #c9a84c; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<header>
+    <img src="logo.jpg" alt="لوگو" class="logo">
+    <div class="shop-name">انـجمܔ سـلطنتے | فروشگاه</div>
+    <div class="shop-sub">ROYAL SOCIETY SHOP 🔬</div>
+</header>
+
+<main>
+    <div class="section-title">✨ محصولات ما</div>
+    <div class="products">
+
+        <!-- محصول ۱ -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x180?text=Product+1" alt="محصول ۱">
+            <div class="product-info">
+                <div class="product-name">گردنبند نقره‌ای</div>
+                <div class="product-price">۱۵۰,۰۰۰ تومان</div>
+                <a href="https://t.me/royal0_10"
+                target="_blank" class="order-btn">📲 سفارش</a>
+            </div>
+        </div>
+
+        <!-- محصول ۲ -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x180?text=Product+2" alt="محصول ۲">
+            <div class="product-info">
+                <div class="product-name">دستبند طلایی</div>
+                <div class="product-price">۲۸۰,۰۰۰ تومان</div>
+                <a href="https://t.me/royal0_10" target="_blank" class="order-btn">📲 سفارش</a>
+            </div>
+        </div>
+
+        <!-- محصول ۳ -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x180?text=Product+3" alt="محصول ۳">
+            <div class="product-info">
+                <div class="product-name">انگشتر کلاسیک</div>
+                <div class="product-price">۱۲۰,۰۰۰ تومان</div>
+                <a href="https://t.me/royal0_10" target="_blank" class="order-btn">📲 سفارش</a>
+            </div>
+        </div>
+
+        <!-- محصول ۴ -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x180?text=Product+4" alt="محصول ۴">
+            <div class="product-info">
+                <div class="product-name">گوشواره مرواریدی</div>
+                <div class="product-price">۹۵,۰۰۰ تومان</div>
+                <a href="https://t.me/royal0_10" target="_blank" class="order-btn">📲 سفارش</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p>ساخته شده با ❤️ برای <a href="https://t.me/royal0_10">@royal0_10</a></p>
+</footer>
+
+<script>
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const stars = Array.from({length: 150}, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.5,
+        opacity: Math.random()
+    }));
+
+    function drawStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        stars.forEach(s => {
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255,255,255,${s.opacity})`;
+            ctx.fill();
+            s.opacity += (Math.random() - 0.5) * 0.02;
+            s.opacity = Math.max(0.1, Math.min(1, s.opacity));
+        });
+        requestAnimationFrame(drawStars);
+    }
+
+    drawStars();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+</script>
+
+</body>
+</html>
